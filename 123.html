@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/svgaplayerweb@2.3.0/build/svga.min.js"></script>
+    <!--[if lt IE 10]> 
+    <script src="../build/svga.ie.min.js"></script>
+<![endif]-->
+<!--[if gte IE 10]><!-->
+    <script src="../build/svga.min.js">
+    </script>
+<!--<![endif]-->
+<script src="//s1.yy.com/ued_web_static/lib/jszip/3.1.4/??jszip.min.js,jszip-utils.min.js" charset="utf-8"></script>
+    <style type="text/css">
+        html,body {
+            font-size: 62.5%;
+        }
+        .swiper-container {
+            position: absolute;
+            top: 5rem;
+            left: 20rem;
+            width: 60rem;
+            height: 60rem;
+            border: 0.1rem solid #ccc;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            margin-top: 50%;
+        }
+
+        .my-bullet-active {
+            background: #b8b8dc;
+            opacity: 1;
+        }
+
+        .download {
+            position: absolute;
+            top: 30%;
+            right: 36%;
+        }
+
+        .download p {
+            font-family: '黑体';
+            font-size: 2.6rem;
+            font-weight: 900;
+            margin: 0.5rem 0;
+        }
+
+        .download a {
+            margin-left: -0.5rem;
+            text-decoration: none;
+            color: #000;
+            display: block;
+            width: 12rem;
+            height: 3rem;
+            line-height: 3rem;
+            border: 0.1rem solid #000;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .heart{
+            position: absolute;
+            bottom: -45px;
+            right: -30px;
+            background-image: url('src/心跳循环序列帧/心跳循环.png');
+            background-repeat: no-repeat;
+            background-size: 300%;
+            background-position: -0px -0px;
+            width: 80px;
+            height: 70px;
+            -webkit-animation: heartjump 2s steps(1,end) infinite;
+        }
+        @-webkit-keyframes heartjump {
+            0%{
+                background-position: -0px -0px;
+            }
+            9.09%{
+                background-position: -80px -0px;
+            }
+            18.18%{
+                background-position: -160px -0px;
+            }
+            27.27%{
+                background-position: -0px -70px;
+            }
+            36.36%{
+                background-position: -80px -70px;
+            }
+            45.45%{
+                background-position: -160px -70px;
+            }
+            54.54%{
+                background-position: -0px -145px;
+            }
+            63.63%{
+                background-position: -80px -145px;
+            }
+            72.72%{
+                background-position: -160px -145px;
+            }
+            81.81%{
+                background-position: -0px -220px;
+            }
+            90.90%{
+                background-position: -80px -220px;
+            }
+            100%{
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 轮播区域 -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">动效内容轮播展示区域 1
+                <div id="demoCanvas" style="background-color: #000000; width: 500px; height: 500px;"></div>
+            </div>
+            <div class="swiper-slide">动效内容轮播展示区域 2</div>
+            <div class="swiper-slide">动效内容轮播展示区域 3</div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 下载区域 -->
+    <div class="download">
+        <p>全民连麦</p>
+        <p>马上下载</p>
+        <a href="">IOS下载</a>
+        <div class="heart"></div> 
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: true,
+            loop: true, // 循环模式选项
+            mousewheel: true,
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+                bulletActiveClass: 'my-bullet-active',
+                clickable: true,
+            },
+        })
+    </script>
+    <script>
+            var player = new SVGA.Player('#demoCanvas');
+            var parser = new SVGA.Parser('#demoCanvas'); // Must Provide same selector eg:#demoCanvas IF support IE6+
+            parser.load('./src/牵手成功动效.svga', function(videoItem) {
+            player.setVideoItem(videoItem);
+            player.startAnimation();
+            })
+    </script>
+</body>
+
+</html>

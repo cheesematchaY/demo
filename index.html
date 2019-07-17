@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="心跳" />
+    <meta name="keywords" content="心跳" />   
+    <meta name=renderer  content=webkit>
+    <title>心跳—初恋的声音 你的心跳</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/svgaplayerweb@2.3.0/build/svga.min.js"></script>
+    
+</head>
+
+<body>
+    <div id="pageContain">
+        <div class="page page1 current">
+            <div class="contain">
+                <div class="logo pab"></div>
+                <div class="main pab">
+                    <i class="pab tx1"></i>
+                    <i class="pab tx2"></i>
+                    <i class="pab tx3"></i>
+                    <i class="pab tx4"></i>
+                    <i class="pab tx5"></i>
+                    <div class="phone pab"></div>
+                </div>
+                <div class="txt t1 pab"></div>
+                <div class="download pab">
+                        <span class="pab"></span>
+                        <a href="" class="btn btn-IOS-down pab"></a>
+                        <i class="qima pab"></i>
+                        <div class="heart"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page page2">
+            <div class="contain">
+                <div class="logo pab"></div>
+                <div class="main pab">
+                    <div class="taoxin pab">
+                        <div class="and-phone pab">
+                            <div id="demoCanvas"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="txt t2 pab"></div>
+                    <div class="download pab">
+                    <span class="pab"></span>
+                    <a href="" class="btn btn-And-down pab"></a>
+                    <i class="qima pab"></i>
+                    <div class="heart"></div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="page page3">
+            <div class="contain">
+                <div class="logo pab"></div>
+                <div class="main pab">
+                    <div class="zhanshi1 pab">
+                        <div class="zhanshi2 pab">
+                            <div class="zhanshi3 pab">
+                                <div id="egg"></div>
+                            </div>
+                        </div>
+                        <div id="car"></div>
+                        <div id="horse"></div>
+                    </div>
+                </div>
+                <div class="txt t3 pab"></div>
+                <div class="download pab">
+                    <span class="pab"></span>
+                    <div class="erweima pab">
+                    </div>
+                    <div class="heart three"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul id="navBar" class="pab">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script src="http://cdn.dowebok.com/143/js/fullPage.min.js"></script>
+    <script>
+        var runPage;
+        runPage = new FullPage({
+            id: 'pageContain',
+            slideTime: 1000,
+            effect: {
+                transform: {
+                    translate: 'X',
+                    scale: [1, 1],
+                    rotate: [0, 0]
+                },
+                opacity: [0, 1]
+            },
+            mode: 'wheel,touch,nav:navBar',
+            easing: 'ease'
+        });
+
+        var svga = function(ele,src) {
+            var player = new SVGA.Player(ele);
+            var parser = new SVGA.Parser(ele); // Must Provide same selector eg:#demoCanvas IF support IE6+
+            parser.load(src, function(videoItem) {
+            player.setVideoItem(videoItem);
+            player.startAnimation();
+            })
+        }
+        svga('#demoCanvas','./src/牵手成功动效.svga');
+        svga('#car','./src/跑车.svga');
+        svga('#horse','./src/马.svga');
+        svga('#egg','./src/金蛋.svga');
+    </script>
+</body>
+</html>

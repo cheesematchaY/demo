@@ -1,0 +1,341 @@
+        body,
+        div,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            width: 100%;
+            overflow: hidden;
+            font: 16px/1.5 "Microsoft YaHei", Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial;
+        }
+
+        #pageContain {
+            width: 100%;
+            max-width: 1920px;
+            height: 1080px !important;
+            overflow: hidden;
+            position: fixed;
+        }
+
+        .page {
+            display: none;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .contain {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: relative;
+            z-index: 0;
+        }
+
+        .current .contain,
+        .slide .contain {
+            display: block;
+        }
+
+        .current {
+            display: block;
+            z-index: 1;
+        }
+
+        .slide {
+            display: block;
+            z-index: 2;
+        }
+
+        .swipe {
+            display: block;
+            z-index: 3;
+            transition-duration: 0ms !important;
+            -webkit-transition-duration: 0ms !important;
+        }
+
+        .page1 {
+            background: url('../images/bg1.png') no-repeat 100%;
+        }
+
+        .page2 {
+            background: url('../images/bg2.png') no-repeat 100%;
+        }
+
+        .page3 {
+            background: url('../images/bg3.png') no-repeat 100%;
+        }
+        
+        #navBar {
+            z-index: 3;
+            bottom: 39px;
+            right: 50%;
+        }
+
+        #navBar .active {
+            background: #fff;
+        }
+
+        #navBar li {
+            float: left;
+            cursor: pointer;
+            margin-left: 14px;
+            transition: all .7s ease;
+            border-radius: 50%;
+            text-align: center;
+            width: 16px;
+            height: 16px;
+            background: #A29CFE;
+        }
+
+        .pab{
+            position: absolute;
+        }
+        .logo{
+            display: inline-block;
+            width: 244px;
+            height: 58px;
+            background: url('../images/ico_logo.png') no-repeat;
+            top: 63px;
+            left: 314px;
+        }
+
+        .main{
+            width: 100%;
+            max-width: 1000px;
+            height: 100%;
+        }
+       
+        .tx1{
+            background: url('../images/ico_touxiang1.png') no-repeat;
+            top:259px;
+            right: 232px;
+            width: 182px;
+            height: 108px;
+            
+        }
+        .tx2{
+            width: 145px;
+            height: 89px;
+            background: url('../images/ico_touxiang2.png') no-repeat;
+            top:363px;
+            right: 159px;
+        }
+        .tx3{
+            width: 108px;
+            height: 123px;
+            background: url('../images/ico_touxiang3.png') no-repeat;
+            bottom: 432px;
+            left: 420px;
+        }
+        .tx4{
+            width: 137px;
+            height: 139px;
+            background: url('../images/ico_touxiang4.png') no-repeat;
+            bottom: 420px;
+            left: 276px;
+        }
+        .tx5{
+            width: 142px;
+            height: 90px;
+            background: url('../images/ico_touxiang5.png') no-repeat;
+            bottom: 570px;
+            left: 341px;
+        }
+
+        .phone{
+            top: 240px;
+            right: 60px;
+            background: url('../images/ico_zhanshitu1.png') no-repeat;
+            width: 646px;
+            height: 631px;
+            z-index: -1;
+        }
+
+        .txt{
+            top: 155px;
+            right: 280px;
+            width: 693px;
+            height: 210px;
+        }
+        .t1 {
+            background: url('../images/wenzi1@2x.png') no-repeat;
+        }
+        .t2 {
+            background: url('../images/wenzi2@2x.png') no-repeat;
+            width: 762px;
+            height: 241px;
+        }
+        .t3 {
+            background: url('../images/wenzi3@2x.png') no-repeat;
+            width: 725px;
+            height: 212px;
+        }
+        .download{
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+        }
+        .download span {
+            top: 466px;
+            right: 473px;
+            width: 210px;
+            height: 122px;
+            background: url('../images/ico_quanminlianmai.png') no-repeat;
+        }
+        .btn{
+            top: 624px;
+            right: 421px;
+            display: block;
+            width: 283px;
+            height: 78px;
+            
+        }
+        .btn-IOS-down{
+            background: url('../images/btn_ios.png') no-repeat;
+        }
+        .btn-And-down{
+            background: url('../images/btn_android.png') no-repeat;
+        }
+        .qima {
+            top: 590px;
+            right: 660px;
+            width: 92px;
+            height: 114px;
+            background: url('../images/ico_qima.png') no-repeat;
+        }
+
+        .heart{
+            position: absolute;
+            bottom: 360px;
+            right: 390px;
+            background-image: url('../src/心跳循环.png');
+            background-repeat: no-repeat;
+            background-size: 300%;
+            background-position: -0px -0px;
+            width: 80px;
+            height: 70px;
+            animation: heartjump 2s steps(1,end) infinite;
+        }
+        @keyframes heartjump {
+            0%{
+                background-position: -0px -0px;
+            }
+            9.09%{
+                background-position: -80px -0px;
+            }
+            18.18%{
+                background-position: -160px -0px;
+            }
+            27.27%{
+                background-position: -0px -70px;
+            }
+            36.36%{
+                background-position: -80px -70px;
+            }
+            45.45%{
+                background-position: -160px -70px;
+            }
+            54.54%{
+                background-position: -0px -145px;
+            }
+            63.63%{
+                background-position: -80px -145px;
+            }
+            72.72%{
+                background-position: -160px -145px;
+            }
+            81.81%{
+                background-position: -0px -220px;
+            }
+            90.90%{
+                background-position: -80px -220px;
+            }
+            100%{
+                background-position: -0px -0px;
+            }
+        }
+        
+        .taoxin {
+            top: 120px;
+            left: 200px;
+            background: url('../images/bg_2taoxin@2x.png') no-repeat;
+            width: 710px;
+            height: 800px;
+        }
+        .and-phone{
+            top: 80px;
+            left: 132px;
+            background: url('../images/ico_zhanshiye2.png') no-repeat;
+            width: 381px;
+            height: 680px;
+        }
+        #demoCanvas {
+            width: 415px;
+            height: 550px;
+        }
+        
+        .zhanshi1 {
+            top: 217px;
+            left: 363px;
+            background: url('../images/ico_zhanshiye3_1.png') no-repeat;
+            width: 311px;
+            height: 600px;
+            background-size: contain;
+        }
+        .zhanshi2 {
+            top: 55px;
+            left: 110px;
+            background: url('../images/ico_zhanshiye3_2.png') no-repeat;
+            width: 220px;
+            height: 320px;
+            background-size: contain;
+        }
+        .zhanshi3 {
+            top: 40px;
+            left: 80px;
+            background: url('../images/ico_zhanshiye3_3.png') no-repeat;
+            width: 217px;
+            height: 320px;
+            background-size: contain;
+        }
+        #car {
+            width: 350px;
+            height: 350px;
+            margin-left: -160px;
+        }
+        #horse {
+            width: 300px;
+            height: 360px;
+            margin-left: -150px;
+        }
+        #egg {
+            width: 300px;
+            height: 600px;
+        }
+        .erweima{
+            bottom: 300px;
+            left: 310px;
+            background: url('../images/ico_erweima.png') no-repeat;
+            width: 150px;
+            height: 168px;
+            background-size: contain;
+        }
+        .three {
+            bottom: 290px;
+            right: 435px;
+        }
